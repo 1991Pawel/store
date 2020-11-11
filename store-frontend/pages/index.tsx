@@ -6,31 +6,11 @@ import Layout from '../components/Layout'
 function Home({ items }) {
   return (
     <Layout>
-      <Head>
-        <title>Create Next App.</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       {console.log(items)}
-
       <main className={styles.main}>
         <p>main</p>
       </main>
       <p>lorem</p>
-      {/* <div className="item">
-        {items.map((item) => (
-          <li key={item.itemId}>
-            {item.title}
-            <img src={item.image} alt="" />
-
-            <p>{item.description}</p>
-            <img src={`http://localhost:1337${item.image[0].formats.medium.url}`} />
-          </li>
-        ))}
-      </div> */}
-
-      <footer className={styles.footer}>
-        <p>footer</p>
-      </footer>
     </Layout>
   )
 }
