@@ -1,35 +1,37 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Layout from '../components/Layout'
 
 
 function Home({ items }) {
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head>
         <title>Create Next App.</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {console.log(items)}
 
       <main className={styles.main}>
         <p>main</p>
       </main>
       <p>lorem</p>
-      <div className="item">
+      {/* <div className="item">
         {items.map((item) => (
-          <li key={item.title}>
+          <li key={item.itemId}>
             {item.title}
             <img src={item.image} alt="" />
-            {console.log(item.image[0].formats.medium.url)}
+
             <p>{item.description}</p>
             <img src={`http://localhost:1337${item.image[0].formats.medium.url}`} />
           </li>
         ))}
-      </div>
+      </div> */}
 
       <footer className={styles.footer}>
         <p>footer</p>
       </footer>
-    </div>
+    </Layout>
   )
 }
 
