@@ -1,15 +1,15 @@
-import React from 'react'
-import Nav from './Nav';
+import Nav from './Nav'
+import styles from '../styles/header.module.scss'
 
 
 const Header = () => {
     return (
-        <header>
+        <header className={styles.header}>
             <form className="search">
-                <input type="text" placeholder="Search.." />
+                <input className="search__input" type="text" placeholder="Search.." />
             </form>
             <div className="logo">
-                LOGO
+                BestStore
             </div>
             <Nav />
         </header>
