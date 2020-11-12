@@ -1,20 +1,21 @@
+import Link from 'next/link';
 import Nav from './Nav'
-import styles from '../styles/header.module.scss'
+import SearchInput from './SearchInput'
+import styles from '../styles/Header.module.scss'
 
 
 const Header = () => {
     return (
         <header className={styles.header}>
-            <form className="search">
-                <input className="search__input" type="text" placeholder="Search.." />
-            </form>
-            <div className="logo">
-                BestStore
+            <SearchInput placeholder="search" />
+            <div className={styles.logo}>
+                <Link href="/">
+                    <a className={styles.link}>BestStore</a>
+                </Link>
             </div>
             <Nav />
         </header>
     )
 }
-
-
 export default Header;
+
