@@ -3,10 +3,21 @@ import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
 
 
-function Home({ items }) {
+export interface ItemsProps {
+  items: Products;
+}
+export interface Products {
+  id: number,
+  title: string,
+  descritpion: string,
+  price: number,
+}
+
+
+
+function Home({ items }: ItemsProps) {
   return (
     <Layout>
-      {console.log(items)}
       <main className={styles.main}>
         <p>main</p>
       </main>
