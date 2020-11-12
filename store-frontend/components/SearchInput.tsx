@@ -1,5 +1,5 @@
 import styles from '../styles/SearchInput.module.scss'
-import SvgSearch from '../components/SearchIcon'
+import SvgSearch from './SvgSearchIcon'
 const SearchInput = ({ ...res }) => {
     return (
         <form className={styles.search}>
