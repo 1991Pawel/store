@@ -1,21 +1,22 @@
-import Nav from './Nav'
 import Head from 'next/head'
+import Header from './Header'
+import styles from '../styles/Layout.module.scss'
 
-const Layout = ({ children, title = 'This is the default title', }) => {
+
+const Layout: React.FC = ({ children }) => {
     return (
         (
-            <div>
+            <div className={styles.container}>
                 <Head>
-                    <title>{title}</title>
+                    <title>Zmienić na dynamiczny title</title>
                     <meta charSet="utf-8" />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
-                <Nav />
+                <Header />
                 {children}
                 <footer>{'I`m here to stay'}</footer>
             </div>
         )
-
     )
 }
 export default Layout;

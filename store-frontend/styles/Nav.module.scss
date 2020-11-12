@@ -1,0 +1,24 @@
+.nav {
+    
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+    }
+    li {
+        margin: .2rem;
+
+    }
+    a {
+        padding: .2rem;
+        text-decoration: none;
+        color: rgb(78, 78, 78);
+        transition: .3s ease-in-out;
+
+    }
+
+    a:hover {
+        opacity:.3;
+    }
+
+}
