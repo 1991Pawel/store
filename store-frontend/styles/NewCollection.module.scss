@@ -1,0 +1,117 @@
+.best {
+    background:#FBFBFD;
+    
+    &__items {
+        display: grid;
+        grid-template-rows: 300px 300px 300px;
+        grid-gap: .5rem;
+        grid-template-columns: 1fr 1fr;
+
+        @media (min-width: 800px) {
+            grid-template-rows: 250px 250px;
+            grid-template-columns: 1fr 270px 270px;
+         }
+
+        @media (min-width: 1000px) {
+            grid-template-rows: 250px 250px;
+            grid-template-columns: 1fr minmax(300px, 350px) minmax(300px, 350px);
+         }
+    }
+
+    &__item {
+        position: relative;
+        list-style: none;
+        overflow: hidden;
+
+        &:nth-child(1){
+            grid-column: 1/-1;
+            grid-row: 1/span 1;
+
+            @media (min-width: 800px) {
+                grid-row:1 /-1;
+                grid-column: 1/span 1;
+             }
+        }
+
+        &:nth-child(2){
+            grid-column: 1/span 1;
+            grid-row: 2 / span 2;
+
+             @media (min-width: 800px) {
+                grid-row:1 /span 1;
+                grid-column: 2/span 1;
+         
+             }
+        }
+
+        &:nth-child(3){
+            grid-column: 2/span 1;
+            grid-row: 2 / span 1;
+
+            @media (min-width: 800px) {
+                grid-row: 2/span 1;
+                grid-column: 2/span 1;
+             }
+        }
+        &:nth-child(4){
+            grid-column: 2/span 1;
+            grid-row: 3 / span 1;
+
+            @media (min-width: 800px) {
+                grid-row: 1/-1;
+                grid-column: 3/span 1;
+             }
+        }
+
+        img {
+            object-fit:cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform:translate(-50%,-50%);
+        font-weight: bold;
+        letter-spacing: .1rem;
+
+        padding: .7rem 1.5rem;
+        background-color: #000;
+        color: #fff;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+
+        @media (min-width: 800px) {
+          padding: .9rem 2rem;
+         }
+
+        &:before {
+            content:'';
+            display: block;
+            position: absolute;
+            bottom:-3px;
+            right:-3px;
+            height: 100%;
+            width: 100%;
+            border: 1px solid rgb(0, 0, 0);
+        } 
+
+        &:hover {
+            color: #D5B36F;
+        }
+    }
+
+  
+
+    &__title {
+        background-color: rgba(31, 31, 31, 0.616);
+        font-size: 1.25rem;
+        color: #fff;
+        
+    }
+  
+}
