@@ -81,8 +81,8 @@
         letter-spacing: .1rem;
 
         padding: .7rem 1.5rem;
-        background-color: #000;
-        color: #fff;
+        background-color: $dark-color;
+        color: $text-light;
         text-transform: uppercase;
         border: none;
         cursor: pointer;
@@ -99,21 +99,12 @@
             right:-3px;
             height: 100%;
             width: 100%;
-            border: 1px solid rgb(0, 0, 0);
+            border: 1px solid $dark-color;
         } 
 
         &:hover {
-            color: #D5B36F;
+            color: $primary-color;
         }
-    }
-
-  
-
-    &__title {
-        background-color: rgba(31, 31, 31, 0.616);
-        font-size: 1.25rem;
-        color: #fff;
-        
     }
   
 }

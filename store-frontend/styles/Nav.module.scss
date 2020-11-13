@@ -16,7 +16,7 @@
     a {
         padding: .2rem;
         text-decoration: none;
-        color: rgb(78, 78, 78);
+        color: $text-dark;
         transition: .2s ease-in-out opacity;
 
         @include respond(tablet) {
