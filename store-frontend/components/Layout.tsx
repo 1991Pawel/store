@@ -1,12 +1,11 @@
 import Head from 'next/head'
 import Header from './Header'
-import styles from '../styles/Layout.module.scss'
 
 
 const Layout: React.FC = ({ children }) => {
     return (
         (
-            <div className={styles.container}>
+            <div>
                 <Head>
                     <title>Zmienić na dynamiczny title</title>
                     <meta charSet="utf-8" />
