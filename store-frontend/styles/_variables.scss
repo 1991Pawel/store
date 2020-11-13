@@ -1,0 +1,42 @@
+//// TEXT
+$text-dark: #090f20;
+$text-light: #eef9fc;
+
+////COLOR
+
+$primary: #2d50a6;
+$primary-light: #7f99dc;
+$primary-dark: #162650;
+$primary-darkest: #eef9fc;
+
+//RESPONSIVE BREKPOINT
+// 0 - 600px:     phone
+// 600-800px      tablet
+// 1000-1200px    destkop
+
+// breakpoint argument list:
+// - phone
+// - tab
+// - desktop
+
+@mixin respond($breakpoint) {
+  //1200px
+  @if $breakpoint == phone {
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  }
+  //1800px
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 800px) {
+      @content;
+    }
+  }
+  //1200px
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 1000px) {
+      @content;
+    }
+  }
+}
+

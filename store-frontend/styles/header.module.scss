@@ -1,18 +1,20 @@
+@import '../styles/variables.scss';
+
 .header {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1f 1fr;
 
-
-    @media (min-width: 800px) {
+      @include respond(tablet) {
         grid-template-columns: minmax(min-content, 200px) 1fr minmax(min-content, 250px);
         grid-template-rows: 1fr 1fr;
-      }
+     }
    
     &__nav {
           grid-column: 1/-1;
-          @media (min-width: 800px) {
+
+         @include respond(tablet) {
             grid-row: 2/span 1;
          }
     }
@@ -21,12 +23,11 @@
         grid-column: 1/-1;
         align-self: center;
         
-        @media (min-width: 800px) {
-           grid-column: 1/span 1;
-           grid-row: 1/span 1;
-          
-        }
-
+        @include respond(tablet) {
+            grid-column: 1/span 1;
+            grid-row: 1/span 1;
+         }
+        
     }
 
     &__logo {
@@ -34,12 +35,12 @@
         font-family: 'Goldman', cursive;
         font-weight: bold;
         align-self: center;
-        
-        @media (min-width: 800px) {
-           grid-column: 2/ span 1;
-           grid-row: 1/span 1;
-           text-align: center;
-          }  
+ 
+          @include respond(tablet) {
+            grid-column: 2/ span 1;
+            grid-row: 1/span 1;
+            text-align: center;
+         }
 
         a {
             font-family: 'Goldman', cursive;
@@ -48,10 +49,9 @@
             text-decoration: none;
             color: rgb(53, 52, 52); 
 
-            @media (min-width: 800px) {
-
-                font-size: 1.5rem;
-              }
+            @include respond(tablet) {
+             font-size: 1.5rem;
+            }
         }
     }
 }
@@ -62,9 +62,9 @@
 
     align-self: center;
 
-    @media (min-width: 800px) {
+    @include respond(tablet) {
         grid-row: 1/span 1;
-      }
+    }
 
     display:flex;
     justify-self: flex-end;
@@ -88,10 +88,10 @@
 
     &__desc {
         display: none;
-        @media (min-width: 800px) {
-          display: block;
-          margin: 0 .5rem;
-          
+        
+        @include respond(tablet) {
+            display: block;
+            margin: 0 .5rem;
         }
     }
 

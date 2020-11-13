@@ -1,4 +1,4 @@
-
+/* Fonts */
 @font-face {
   font-family: 'Lato', sans-serif;
   src: url("../public/fonts/Lato/Lato-Regular.ttf"),
@@ -10,8 +10,6 @@
   src: url("../public/fonts/Goldman/Goldman-Regular.ttf"),
   url("../public/fonts/Goldman/Goldman-Bold.ttf");
 }
-
-
 
 * {
   font-family: 'Lato', sans-serif;

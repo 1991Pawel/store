@@ -1,21 +1,24 @@
-.best {
+@import '../styles/variables.scss';
+
+.new {
     background:#FBFBFD;
-    
+
     &__items {
         display: grid;
         grid-template-rows: 300px 300px 300px;
         grid-gap: .5rem;
         grid-template-columns: 1fr 1fr;
 
-        @media (min-width: 800px) {
+        @include respond(tablet) {
             grid-template-rows: 250px 250px;
             grid-template-columns: 1fr 270px 270px;
-         }
-
-        @media (min-width: 1000px) {
+        }
+    
+         @include respond(desktop) {
             grid-template-rows: 250px 250px;
             grid-template-columns: 1fr minmax(300px, 350px) minmax(300px, 350px);
-         }
+            
+        }
     }
 
     &__item {
@@ -27,40 +30,39 @@
             grid-column: 1/-1;
             grid-row: 1/span 1;
 
-            @media (min-width: 800px) {
+            @include respond(tablet) {
                 grid-row:1 /-1;
                 grid-column: 1/span 1;
-             }
+            }
         }
 
         &:nth-child(2){
             grid-column: 1/span 1;
             grid-row: 2 / span 2;
 
-             @media (min-width: 800px) {
+            @include respond(tablet) {
                 grid-row:1 /span 1;
                 grid-column: 2/span 1;
-         
-             }
+            }
         }
 
         &:nth-child(3){
             grid-column: 2/span 1;
             grid-row: 2 / span 1;
 
-            @media (min-width: 800px) {
+             @include respond(tablet) {
                 grid-row: 2/span 1;
                 grid-column: 2/span 1;
-             }
+            }
         }
         &:nth-child(4){
             grid-column: 2/span 1;
             grid-row: 3 / span 1;
 
-            @media (min-width: 800px) {
+             @include respond(tablet) {
                 grid-row: 1/-1;
                 grid-column: 3/span 1;
-             }
+            }
         }
 
         img {
@@ -85,8 +87,8 @@
         border: none;
         cursor: pointer;
 
-        @media (min-width: 800px) {
-          padding: .9rem 2rem;
+         @include respond(tablet) {
+            padding: .9rem 2rem;
          }
 
         &:before {
