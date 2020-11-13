@@ -4,22 +4,37 @@ import SearchInput from './SearchInput'
 import styles from '../styles/Header.module.scss'
 import SvgCartIcon from './SvgCartIcon'
 import SvgUserIcon from './SvgUserIcon'
+import SvgHeartIcon from './SvgHeartIcon'
 
 
 const Header = () => {
     return (
         <header className={styles.header}>
-            <SearchInput placeholder="Search" />
-            <div className={styles.menu}>
-                <SvgCartIcon width="25px" height="25px" />
-                <SvgUserIcon width="25px" height="25px" />
+            <div className={styles.header__search}>
+                <SearchInput placeholder="Search" />
             </div>
-            <div className={styles.logo}>
+            <div className={styles.header__logo}>
                 <Link href="/">
-                    <a className={styles.link}>BestStore</a>
+                    <a>BestStore</a>
                 </Link>
             </div>
-            <Nav />
+            <div className={styles.menu}>
+                <button className={styles.menu__option}>
+                    <SvgUserIcon />
+                    <span className={styles.menu__desc}>Log in</span>
+                </button>
+                <button className={styles.menu__option}>
+                    <SvgCartIcon />
+                    <span className={styles.menu__desc}>$0.00</span>
+                </button>
+                <button className={styles.menu__option}>
+                    <SvgHeartIcon />
+                    <span className={styles.menu__count}>5</span>
+                </button>
+            </div>
+            <div className={styles.header__nav}>
+                <Nav />
+            </div>
         </header>
     )
 }
