@@ -1,0 +1,48 @@
+//// TEXT
+$text-dark: #090f20;
+$text-light: #eef9fc;
+
+//FONTS 
+$primary-font:'Lato', sans-serif;
+$secondary-font:'Goldman', cursive;
+
+////COLOR
+$dark-color:#000;
+$white-color:#fff;
+
+$primary-color: #D5B36F;
+$secondary-color:#FBFBFD;
+
+
+
+//RESPONSIVE BREKPOINT
+// 0 - 600px:     phone
+// 600-800px      tablet
+// 1000-1200px    destkop
+
+// breakpoint argument list:
+// - phone
+// - tab
+// - desktop
+
+@mixin respond($breakpoint) {
+  //600px
+  @if $breakpoint == phone {
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  }
+  //800px
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 800px) {
+      @content;
+    }
+  }
+  //1000px
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 1000px) {
+      @content;
+    }
+  }
+}
+

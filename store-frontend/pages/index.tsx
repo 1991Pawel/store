@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
-import BestSellers from '../components/BestSellers'
+import NewCollection from '../components/NewCollection'
 
 
 export interface ItemsProps {
@@ -19,7 +19,7 @@ function Home({ items }: ItemsProps) {
   return (
     <Layout>
       <main>
-        <BestSellers />
+        <NewCollection />
       </main>
       <p>lorem</p>
     </Layout>
