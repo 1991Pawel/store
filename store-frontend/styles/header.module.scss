@@ -3,6 +3,8 @@
     grid-gap: 1rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1f 1fr;
+    background-color: rgb(243, 242, 242);
+
 
     @media (min-width: 800px) {
         grid-template-columns: minmax(min-content, 200px) 1fr minmax(min-content, 250px);
@@ -36,8 +38,7 @@
         font-family: 'Goldman', cursive;
         font-weight: bold;
         align-self: center;
-
-
+        
         @media (min-width: 800px) {
            grid-column: 2/ span 1;
            grid-row: 1/span 1;
@@ -118,7 +119,6 @@
         width: 1rem;
 
     }
-
 }
 
 

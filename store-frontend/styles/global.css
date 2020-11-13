@@ -50,3 +50,9 @@ ul {
 h1,h2,h3,h4,h5 {
   font-family: 'Goldman', cursive;
 }
+
+.wrapper {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
