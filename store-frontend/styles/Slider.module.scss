@@ -1,0 +1,57 @@
+@import '../styles/variables.scss';
+
+.slider {
+    &__item {
+        margin:  0 auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 250px;
+        width: 100%;
+        background-color: #ccc;
+
+    }
+
+    &__content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: rgba(41, 41, 41, 0.781);
+        padding: .5rem;
+       
+    }
+
+    &__heart {
+        position: absolute;
+        top:.5px;
+        right: .5px;
+        background: transparent;
+        border: none;
+        color: $white-color;
+    }
+
+    &__cart {
+        background: transparent;
+        border: none;
+        color: #fff;
+    }
+ 
+    img {
+        object-fit:cover;
+        height: 100%;
+        width: 100%;
+
+    }
+
+    &__desc {
+        text-align: center;
+        color:#fff;
+        margin: .5rem;
+    }
+  
+  
+
+    
+}
