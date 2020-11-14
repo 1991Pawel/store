@@ -1,7 +1,7 @@
-import Head from 'next/head'
 import Layout from '../components/Layout'
 import NewCollection from '../components/NewCollection'
 import IntroBanner from '../components/IntroBanner'
+import Slider from '../components/Slider'
 
 
 export interface ItemsProps {
@@ -21,6 +21,7 @@ function Home({ items }: ItemsProps) {
     <Layout>
       <IntroBanner />
       <main>
+        <Slider />
         <NewCollection />
       </main>
       <p>lorem</p>
@@ -34,7 +35,7 @@ export async function getStaticProps() {
   const res = await fetch('http://localhost:1337/items')
   const items = await res.json()
 
-  // By returning { props: posts }, the Blog component
+  // By returning {props: posts }, the Blog component
   // will receive `posts` as a prop at build time
   return {
     props: {
