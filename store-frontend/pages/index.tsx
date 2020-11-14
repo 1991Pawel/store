@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import NewCollection from '../components/NewCollection'
+import IntroBanner from '../components/IntroBanner'
 
 
 export interface ItemsProps {
@@ -18,6 +19,7 @@ export interface Products {
 function Home({ items }: ItemsProps) {
   return (
     <Layout>
+      <IntroBanner />
       <main>
         <NewCollection />
       </main>
