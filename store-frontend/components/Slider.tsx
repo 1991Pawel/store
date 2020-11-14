@@ -9,10 +9,10 @@ const slideone = (
         <button className={styles.slider__heart}>
             <SvgHeartIcon />
         </button>
-        <img src="https://img01.ztat.net/article/spp-media-p1/7c2d7afa446a332aa033dbd4e42af10f/092fc816b6df4b688940012abb241c53.jpg?imwidth=1800" />
+        <img src="https://images.pexels.com/photos/2560894/pexels-photo-2560894.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
         <div className={styles.slider__content}>
-            <h5 className={styles.slider__desc}>Name of this products</h5>
             <button className={styles.slider__cart}>
+                add to cart
                 <SvgCartIcon />
             </button>
         </div>
@@ -23,11 +23,11 @@ const slidetwo = (
         <button className={styles.slider__heart}>
             <SvgHeartIcon />
         </button>
-        <img src="https://img01.ztat.net/article/spp-media-p1/7c2d7afa446a332aa033dbd4e42af10f/092fc816b6df4b688940012abb241c53.jpg?imwidth=1800" />
+        <img src="https://images.pexels.com/photos/1232459/pexels-photo-1232459.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" />
         <div className={styles.slider__content}>
-            <h5 className={styles.slider__desc}>Name of this products</h5>
             <button className={styles.slider__cart}>
-                <SvgCartIcon />
+                add to cart
+            <SvgCartIcon />
             </button>
         </div>
     </div>
@@ -37,11 +37,11 @@ const slidethree = (
         <button className={styles.slider__heart}>
             <SvgHeartIcon />
         </button>
-        <img src="https://img01.ztat.net/article/spp-media-p1/7c2d7afa446a332aa033dbd4e42af10f/092fc816b6df4b688940012abb241c53.jpg?imwidth=1800" />
+        <img src="https://images.pexels.com/photos/5159242/pexels-photo-5159242.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
         <div className={styles.slider__content}>
-            <h5 className={styles.slider__desc}>Name of this products</h5>
             <button className={styles.slider__cart}>
-                <SvgCartIcon />
+                add to cart
+            <SvgCartIcon />
             </button>
         </div>
     </div>
@@ -51,11 +51,11 @@ const slidefour = (
         <button className={styles.slider__heart}>
             <SvgHeartIcon />
         </button>
-        <img src="https://img01.ztat.net/article/spp-media-p1/7c2d7afa446a332aa033dbd4e42af10f/092fc816b6df4b688940012abb241c53.jpg?imwidth=1800" />
+        <img src="https://images.pexels.com/photos/3268529/pexels-photo-3268529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
         <div className={styles.slider__content}>
-            <h5 className={styles.slider__desc}>Name of this products</h5>
             <button className={styles.slider__cart}>
-                <SvgCartIcon />
+                add to cart
+            <SvgCartIcon />
             </button>
         </div>
     </div>
@@ -65,11 +65,11 @@ const slidefive = (
         <button className={styles.slider__heart}>
             <SvgHeartIcon />
         </button>
-        <img src="https://img01.ztat.net/article/spp-media-p1/7c2d7afa446a332aa033dbd4e42af10f/092fc816b6df4b688940012abb241c53.jpg?imwidth=1800" />
+        <img src="https://images.pexels.com/photos/3152187/pexels-photo-3152187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
         <div className={styles.slider__content}>
-            <h5 className={styles.slider__desc}>Name of this products</h5>
             <button className={styles.slider__cart}>
-                <SvgCartIcon />
+                add to cart
+            <SvgCartIcon />
             </button>
         </div>
     </div>
@@ -81,9 +81,9 @@ const slidesix = (
         </button>
         <img src="https://img01.ztat.net/article/spp-media-p1/7c2d7afa446a332aa033dbd4e42af10f/092fc816b6df4b688940012abb241c53.jpg?imwidth=1800" />
         <div className={styles.slider__content}>
-            <h5 className={styles.slider__desc}>Name of this products</h5>
             <button className={styles.slider__cart}>
-                <SvgCartIcon />
+                add to cart
+            <SvgCartIcon />
             </button>
         </div>
     </div>
@@ -95,7 +95,7 @@ const Slider = () => {
     return (
         <div className="wrapper">
             <div className={styles.slider} >
-                <Carousel slidesToShow={slideNumber}>
+                <Carousel slidesToShow={slideNumber} renderBottomCenterControls={null}>
                     {slideone}
                     {slidetwo}
                     {slidethree}
