@@ -1,4 +1,4 @@
-import { useWindowSize } from '../hooks/useWindowSize'
+import { useSlideNumber } from '../hooks/useSlideNumber'
 import Carousel from 'nuka-carousel';
 import styles from '../styles/Slider.module.scss'
 import SvgCartIcon from './SvgCartIcon'
@@ -90,14 +90,12 @@ const slidesix = (
 )
 
 const Slider = () => {
-
-    const size = useWindowSize()
-    if (size?.width === undefined) return null;
+    const slideNumber = useSlideNumber();
 
     return (
         <div className="wrapper">
             <div className={styles.slider} >
-                <Carousel slidesToShow={1}>
+                <Carousel slidesToShow={slideNumber}>
                     {slideone}
                     {slidetwo}
                     {slidethree}
