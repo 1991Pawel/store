@@ -42,3 +42,4 @@ export const useWindowSize = () => {
     }, []); // Empty array ensures that effect is only run on mount
     return useMemo(() => windowSize, [windowSize, setWindowSize])
 }
+

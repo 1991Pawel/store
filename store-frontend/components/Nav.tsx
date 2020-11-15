@@ -10,17 +10,17 @@ const Nav = () => (
                 </Link>
             </li>
             <li>
-                <Link href="/">
+                <Link href="/sale">
                     <a>Sale</a>
                 </Link>
             </li>
             <li>
-                <Link href="/">
+                <Link href="/woman">
                     <a>Woman</a>
                 </Link>
             </li>
             <li>
-                <Link href="/">
+                <Link href="/man">
                     <a>Man</a>
                 </Link>
             </li>
