@@ -2,6 +2,21 @@
 
 .footer {
     background-color: $dark-color;
+    min-height: 5rem;
+    padding: 2rem 0;
+
+
+    &__title {
+        text-align: center;
+        color: $primary-color;
+        margin: 1rem;
+        font-size: 2rem;
+    }
+
+    &__copyright {
+        text-align: center;
+        color: $primary-color;
+    }
 }
 
 

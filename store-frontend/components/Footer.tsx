@@ -7,6 +7,7 @@ import SvgMailIcon from './SvgMailIcon'
 const Footer = () => (
     <footer className={styles.footer}>
         <div className="wrapper">
+            <h5 className={styles.footer__title}>BestStore</h5>
             <ul className={styles.social}>
                 <li className={styles.social__item}>
                     <Link href="/">
@@ -30,6 +31,7 @@ const Footer = () => (
                     </Link>
                 </li>
             </ul>
+            <p className={styles.footer__copyright}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, dicta.</p>
         </div>
     </footer>
 )
