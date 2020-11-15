@@ -95,7 +95,8 @@ const Slider = () => {
     return (
         <div className="wrapper">
             <div className={styles.slider} >
-                <Carousel slidesToShow={slideNumber} renderBottomCenterControls={null}>
+                <Carousel slidesToShow={slideNumber}
+                    renderBottomCenterControls={null}>
                     {slideone}
                     {slidetwo}
                     {slidethree}

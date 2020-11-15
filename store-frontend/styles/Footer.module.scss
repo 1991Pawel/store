@@ -1,0 +1,28 @@
+@import '../styles/variables.scss';
+
+.footer {
+    background-color: $dark-color;
+}
+
+
+.social {
+    display: flex;
+    justify-content: center;
+ 
+
+    &__item {
+        margin: 1rem;
+        list-style: none;
+
+        cursor: pointer;
+        a {
+            color: $primary-color;
+            transition: .2s all ease-in-out;
+
+            &:hover {
+                opacity:.5;
+            }
+        }
+
+    }
+}
