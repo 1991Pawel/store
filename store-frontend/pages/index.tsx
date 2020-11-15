@@ -2,7 +2,6 @@ import Layout from '../components/Layout'
 import NewCollection from '../components/NewCollection'
 import IntroBanner from '../components/IntroBanner'
 import Slider from '../components/Slider'
-import Footer from '../components/Footer'
 
 
 export interface ItemsProps {

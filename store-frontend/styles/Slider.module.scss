@@ -1,63 +1,13 @@
 @import '../styles/variables.scss';
 
 .slider {
-    &__item {
-        margin:  0 auto;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        max-width: 250px;
-        width: 100%;
-
-    }
-
-    &__content {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(41, 41, 41, 0.781);
-        padding: .5rem 2rem; 
-       
-    }
-
-    &__cart,
-    &__heart {
-        border: none;
-        background: transparent;
-        color: $primary-color;
-        cursor: pointer;
     
-        &:hover {
-            opacity: .5;
+    &__slide {
+        width: 200px;
+        margin: 0 auto;
+        @include respond(tablet) {
+            margin: 0 0;
+            width: 250px;
         }
-       
     }
-    &__heart {
-        position: absolute;
-        top:0px;
-        right: 0px;
-        background-color: rgba(41, 41, 41, 0.781);
-    }
-
-    &__cart {
-        padding: .3rem 0;
-        width: 100%;
-        font-size: .7rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: $dark-color;
-
-    }
- 
-    img {
-        object-fit:cover;
-        height: 100%;
-        width: 100%;
-
-    }
-  
 }

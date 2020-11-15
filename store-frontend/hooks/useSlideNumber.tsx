@@ -6,7 +6,7 @@ export const useSlideNumber = () => {
 
     if (size?.width !== undefined) {
 
-        if (size?.width > 600) {
+        if (size?.width > 800) {
             slideNumber = 2;
         }
         if (size?.width > 1000) {
