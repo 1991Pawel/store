@@ -2,7 +2,8 @@
 
 .slider {
     
-    &__slide {
+    
+    &__wrapper {
         width: 200px;
         margin: 0 auto;
         @include respond(tablet) {

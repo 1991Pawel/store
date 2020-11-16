@@ -1,58 +1,30 @@
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
 import { useSlideNumber } from '../hooks/useSlideNumber'
 import Carousel from 'nuka-carousel';
 import styles from '../styles/Slider.module.scss'
 import SingleProduct from './SingleProduct'
+import { Products } from '../types/type'
 
 
-
-
-
-const slideone = (
-    <div className={styles.slider__slide}>
-        <SingleProduct />
-    </div>
-)
-const slidetwo = (
-    <div className={styles.slider__slide}>
-        <SingleProduct />
-    </div>
-)
-const slidethree = (
-    <div className={styles.slider__slide}>
-        <SingleProduct />
-    </div>
-)
-const slidefour = (
-    <div className={styles.slider__slide}>
-        <SingleProduct />
-    </div>
-)
-const slidefive = (
-    <div className={styles.slider__slide}>
-        <SingleProduct />
-    </div>
-)
-const slidesix = (
-    <div className={styles.slider__slide}>
-        <SingleProduct />
-    </div>
-)
-
-const slides = [slideone, slidetwo, slidethree, slidefour, slidefive, slidesix]
-
-const Slider = () => {
+const Slider = ({ products }: Products) => {
     const slideNumberToShow = useSlideNumber();
+    const { addItemToCart, removeItemFromCart, cartItems } = useContext(CartContext)
+    console.log(cartItems)
+
     return (
         <div className="wrapper">
             <div className={styles.slider} >
                 <Carousel slidesToShow={slideNumberToShow}
                     renderBottomCenterControls={null}>
-                    {slides.map((slide) => slide)}
+                    {products.map((product) =>
+                        <div key={product.id} className={styles.slider__wrapper}>
+                            <SingleProduct removeItemFromCart={removeItemFromCart} addItemToCart={addItemToCart} product={product} />
+                        </div>
+                    )}
                 </Carousel>
             </div>
         </div >
     )
 }
-
 export default Slider
-
