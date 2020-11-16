@@ -17,12 +17,24 @@ const App = ({ Component, pageProps }: any) => {
 App.getInitialProps = async ({ Component, ctx }) => {
   const __SERVER__ = typeof window === "undefined";
   const appProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
+  const appData = {};
 
-  if (!__SERVER__) return { pageProps: { ...appProps } };
+  if (__SERVER__) {
+    try {
+      const { user_id: userId = null } = ctx.req.cookies;
 
-  const storeData = [{ id: 1, name: "Bluza" }, { id: 2, name: "Koszula " }];
+      // const response = await fetch(`/saved_store/${userId}`);
+      // const data = response.json();
 
-  return { pageProps: { ...appProps, storeData } };
+      const storeData = [{ id: 1, name: "Bluza" }, { id: 2, name: "Koszula " }];
+
+      appData.storeData = storeData;
+      appData.userId = userId;
+    }
+    catch { }
+  }
+
+  return { pageProps: { ...appProps, ...appData } };
 };
 
 export default App;
