@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext'
 import Nav from './Nav'
 import SearchInput from './SearchInput'
 import styles from '../styles/Header.module.scss'
-import SvgCartIcon from './SvgCartIcon'
-import SvgUserIcon from './SvgUserIcon'
-import SvgHeartIcon from './SvgHeartIcon'
+import UserMenu from './UserMenu';
+
 
 
 const Header = () => {
@@ -19,20 +20,7 @@ const Header = () => {
                         <a>BestStore</a>
                     </Link>
                 </div>
-                <div className={styles.menu}>
-                    <button className={styles.menu__option}>
-                        <SvgUserIcon />
-                        <span className={styles.menu__desc}>Log in</span>
-                    </button>
-                    <button className={styles.menu__option}>
-                        <SvgCartIcon />
-                        <span className={styles.menu__desc}>$0.00</span>
-                    </button>
-                    <button className={styles.menu__option}>
-                        <SvgHeartIcon />
-                        <span className={styles.menu__count}>5</span>
-                    </button>
-                </div>
+                <UserMenu />
                 <div className={styles.header__nav}>
                     <Nav />
                 </div>
