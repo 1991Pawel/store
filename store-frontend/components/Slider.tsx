@@ -10,7 +10,6 @@ import { Products } from '../types/type'
 const Slider = ({ products }: Products) => {
     const slideNumberToShow = useSlideNumber();
     const { addItemToCart, removeItemFromCart, cartItems } = useContext(CartContext)
-    console.log(cartItems)
 
     return (
         <div className="wrapper">

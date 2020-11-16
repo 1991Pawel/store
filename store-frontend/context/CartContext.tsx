@@ -1,11 +1,23 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import { Product } from '../types/type'
+import { useLocalStorage } from '../hooks/useLocalStorage'
+
+
 
 export const CartContext = createContext({});
-// PUT http://localhost:1337/restaurants/1
+
 
 export const CartProvider: React.FC = ({ children }) => {
-    const [cartItems, setCartItems] = useState<any>([]);
+    const [storedProducts, setStoredProducts] = useLocalStorage('products', []);
+    const [cartItems, setCartItems] = useState<any>(storedProducts);
+
+
+
+    useEffect(() => {
+        setStoredProducts(cartItems)
+    }, [cartItems]);
+
+
 
     const addItemToCart = (product: Product) => setCartItems((prev) => Array.from(new Set([...prev, product])));
     const removeItemFromCart = (id: number) => setCartItems(cartItems.filter((item) => item.id !== id))
