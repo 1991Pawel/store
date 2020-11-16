@@ -1,19 +1,12 @@
-import react from 'react'
-import { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState } from 'react'
 import { Product } from '../types/type'
-import { useLocalStorage } from '../hooks/useLocalStorage'
 
 export const CartContext = createContext({});
 
-export const CartProvider: React.FC = ({ children }) => {
-    const [storedValue, setStoredValue] = useLocalStorage('products', []);
-    const [cartItems, setCartItems] = useState(storedValue);
+const CartProvider = ({ children, data }) => {
+    const [cartItems, setCartItems] = useState(data);
 
-    useEffect(() => {
-        setStoredValue(cartItems)
-    }, [cartItems]);
-    ;
-    const addItemToCart = (product: Product) => setCartItems(Array.from(new Set([...storedValue, product])));
+    const addItemToCart = (product: Product) => setCartItems([]);
     const removeItemFromCart = (id: number) => console.log('usuń z koszyka');
 
     return (
@@ -22,3 +15,5 @@ export const CartProvider: React.FC = ({ children }) => {
         </CartContext.Provider>
     )
 }
+
+export default CartProvider;

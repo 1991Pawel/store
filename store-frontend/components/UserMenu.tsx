@@ -8,7 +8,6 @@ import { CartContext } from '../context/CartContext'
 
 
 const UserMenu = () => {
-    if (typeof window === undefined) return;
     const { cartItems } = useContext(CartContext)
 
     return (
