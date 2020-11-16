@@ -6,15 +6,15 @@ import { useLocalStorage } from '../hooks/useLocalStorage'
 export const CartContext = createContext({});
 
 export const CartProvider: React.FC = ({ children }) => {
-    const [storedProducts, setStoredProducts] = useLocalStorage('products', []);
-    const [cartItems, setCartItems] = useState(storedProducts);
+    const [storedValue, setStoredValue] = useLocalStorage('products', []);
+    const [cartItems, setCartItems] = useState(storedValue);
 
     useEffect(() => {
-        setStoredProducts(cartItems)
+        setStoredValue(cartItems)
     }, [cartItems]);
-
-    const addItemToCart = (product: Product) => setCartItems((prev) => Array.from(new Set([...prev, product])));
-    const removeItemFromCart = (id: number) => setCartItems(cartItems.filter((item) => item.id !== id))
+    ;
+    const addItemToCart = (product: Product) => setCartItems(Array.from(new Set([...storedValue, product])));
+    const removeItemFromCart = (id: number) => console.log('usuń z koszyka');
 
     return (
         <CartContext.Provider value={{ cartItems, addItemToCart, removeItemFromCart }}>
