@@ -1,12 +1,8 @@
 import Link from 'next/link';
-import { useContext } from 'react';
-import { CartContext } from '../context/CartContext'
 import Nav from './Nav'
 import SearchInput from './SearchInput'
 import styles from '../styles/Header.module.scss'
 import UserMenu from './UserMenu';
-
-
 
 const Header = () => {
     return (

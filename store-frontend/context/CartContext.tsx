@@ -1,24 +1,23 @@
-import react from 'react'
-import { createContext, useState, useEffect } from 'react'
-import { Product } from '../types/type'
-import { useLocalStorage } from '../hooks/useLocalStorage'
+import React, { createContext, useState } from 'react';
+import { Product } from '../types/type';
 
 export const CartContext = createContext({});
 
-export const CartProvider: React.FC = ({ children }) => {
-    const [storedProducts, setStoredProducts] = useLocalStorage('products', []);
-    const [cartItems, setCartItems] = useState(storedProducts);
+const CartProvider = ({ children, data }) => {
+  const [cartItems, setCartItems] = useState(data);
 
-    useEffect(() => {
-        setStoredProducts(cartItems)
-    }, [cartItems]);
+  const addItemToCart = (product: Product) =>
+    setCartItems([...cartItems, product]);
+  const removeItemFromCart = (id: number) =>
+    setCartItems(cartItems.filter((item) => item.id !== id));
 
-    const addItemToCart = (product: Product) => setCartItems((prev) => Array.from(new Set([...prev, product])));
-    const removeItemFromCart = (id: number) => setCartItems(cartItems.filter((item) => item.id !== id))
+  return (
+    <CartContext.Provider
+      value={{ cartItems, addItemToCart, removeItemFromCart }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
 
-    return (
-        <CartContext.Provider value={{ cartItems, addItemToCart, removeItemFromCart }}>
-            {children}
-        </CartContext.Provider>
-    )
-}
+export default CartProvider;
