@@ -1,6 +1,6 @@
-import '../styles/global.css'
+import '../styles/global.css';
 import '../styles/_variables.scss';
-import CartProvider from '../context/CartContext'
+import CartProvider from '../context/CartContext';
 
 const App = ({ Component, pageProps }: any) => {
   const { storeData } = pageProps;
@@ -11,12 +11,14 @@ const App = ({ Component, pageProps }: any) => {
         <Component {...pageProps} />
       </CartProvider>
     </>
-  )
-}
+  );
+};
 
 App.getInitialProps = async ({ Component, ctx }) => {
-  const __SERVER__ = typeof window === "undefined";
-  const appProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
+  const __SERVER__ = typeof window === 'undefined';
+  const appProps = Component.getInitialProps
+    ? await Component.getInitialProps(ctx)
+    : {};
   const appData = {};
 
   if (__SERVER__) {
@@ -26,12 +28,14 @@ App.getInitialProps = async ({ Component, ctx }) => {
       // const response = await fetch(`/saved_store/${userId}`);
       // const data = response.json();
 
-      const storeData = [{ id: 1, name: "Bluza" }, { id: 2, name: "Koszula " }];
+      const storeData = [
+        { id: 1, name: 'Bluza' },
+        { id: 2, name: 'Koszula ' },
+      ];
 
       appData.storeData = storeData;
       appData.userId = userId;
-    }
-    catch { }
+    } catch {}
   }
 
   return { pageProps: { ...appProps, ...appData } };

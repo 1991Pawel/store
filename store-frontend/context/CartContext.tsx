@@ -2,7 +2,6 @@ import React, { createContext, useState } from 'react';
 import { Product } from '../types/type';
 
 export const CartContext = createContext({});
-
 const CartProvider = ({ children, data }) => {
   const [cartItems, setCartItems] = useState(data);
 
