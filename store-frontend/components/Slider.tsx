@@ -6,7 +6,7 @@ import styles from '../styles/Slider.module.scss';
 import SingleProduct from './SingleProduct';
 import { Products } from '../types/type';
 
-const Slider = ({ products }: Products) => {
+const Slider: React.FC<Products> = ({ products }) => {
   const slideNumberToShow = useSlideNumber();
   const { addItemToCart, removeItemFromCart, cartItems } = useContext(
     CartContext,

@@ -6,7 +6,7 @@ import SvgHeartIcon from './SvgHeartIcon';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
-const UserMenu = () => {
+const UserMenu: React.FC = () => {
   const { cartItems } = useContext(CartContext);
 
   return (

@@ -1,6 +1,6 @@
 import styles from '../styles/IntroBanner.module.scss';
 
-const IntroBanner = () => (
+const IntroBanner: React.FC = () => (
   <div className="wrapper">
     <div className={styles.intro}>
       <div className={styles.intro__content}>

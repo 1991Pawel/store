@@ -2,7 +2,7 @@ import '../styles/global.css';
 import '../styles/_variables.scss';
 import CartProvider from '../context/CartContext';
 
-const App = ({ Component, pageProps }: any) => {
+const App = ({ Component, pageProps }) => {
   const { storeData } = pageProps;
 
   return (

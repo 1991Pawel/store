@@ -4,7 +4,7 @@ import IntroBanner from '../components/IntroBanner';
 import Slider from '../components/Slider';
 import { Products } from '../types/type';
 
-function Home({ products }: Products) {
+const Home = ({ products }: Products) => {
   return (
     <Layout>
       <IntroBanner />
@@ -14,7 +14,7 @@ function Home({ products }: Products) {
       </main>
     </Layout>
   );
-}
+};
 
 // This function gets called at build time
 export const getServerSideProps = async () => {

@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 
-const Man = () => {
+const Man: React.FC = () => {
   return (
     <Layout>
       <h2>Man</h2>

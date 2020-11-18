@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 
-const Sale = () => {
+const Sale: React.FC = () => {
   return (
     <Layout>
       <h2>sale</h2>

@@ -4,7 +4,7 @@ import SvgFacebookIcon from './SvgFacebook';
 import SvgInstagramIcon from './SvgInstagram';
 import SvgMailIcon from './SvgMailIcon';
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <footer className={styles.footer}>
     <div className="wrapper">
       <h5 className={styles.footer__title}>BestStore</h5>

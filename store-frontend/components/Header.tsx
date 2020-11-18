@@ -4,7 +4,7 @@ import SearchInput from './SearchInput';
 import styles from '../styles/Header.module.scss';
 import UserMenu from './UserMenu';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <div className="wrapper">
       <header className={styles.header}>

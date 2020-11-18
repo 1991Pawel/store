@@ -1,6 +1,11 @@
 import styles from '../styles/SearchInput.module.scss';
 import SvgSearch from './SvgSearchIcon';
-const SearchInput = ({ ...res }) => {
+
+type SearchInputProps = {
+  placeholder: string;
+};
+
+const SearchInput: React.FC<SearchInputProps> = ({ ...res }) => {
   return (
     <form className={styles.search}>
       <div className={styles.wrapper}>

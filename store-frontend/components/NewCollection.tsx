@@ -1,8 +1,6 @@
 import styles from '../styles/NewCollection.module.scss';
-import SvgCartIcon from './SvgCartIcon';
-import SvgHeartIcon from './SvgHeartIcon';
 
-const NewCollection = () => (
+const NewCollection: React.FC = () => (
   <section className={styles.new}>
     <div className="wrapper">
       <h2>New colection</h2>

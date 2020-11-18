@@ -1,17 +1,24 @@
 import styles from '../styles/SingleProduct.module.scss';
 import SvgCartIcon from './SvgCartIcon';
 import SvgHeartIcon from './SvgHeartIcon';
+import { Product } from '../types/type';
 
-const SingleProduct = ({
+type SingleProductProps = {
+  product: Product;
+  addItemToCart: (product: Product) => void;
+  removeItemFromCart: (id: number) => void;
+};
+
+const SingleProduct: React.FC<SingleProductProps> = ({
   product,
   addItemToCart,
   removeItemFromCart,
-}: any) => {
+}) => {
   return (
     <div className={styles.product}>
       <div className={styles.product__item}>
         <button
-          onClick={() => addItemToCart(product)}
+          onClick={() => removeItemFromCart(product.id)}
           className={styles.product__heart}
         >
           <SvgHeartIcon />
