@@ -2,49 +2,47 @@
 $text-dark: #090f20;
 $text-light: #eef9fc;
 
-//FONTS 
-$primary-font:'Lato', sans-serif;
-$secondary-font:'Goldman', cursive;
+//FONTS
+$primary-font: 'Lato', sans-serif;
+$secondary-font: 'Goldman', cursive;
 
 ////COLOR
-$dark-color:#000;
-$white-color:#fff;
+$dark-color: #000;
+$white-color: #fff;
 
-$primary-color: #D5B36F;
-$secondary-color:#FBFBFD;
-
+$primary-color: #d5b36f;
+$secondary-color: #fbfbfd;
 
 @mixin primary-btn {
-    position: relative;
-    font-weight: bold;
-    letter-spacing: .1rem;
-    padding: .7rem 1.5rem;
-    background-color: $dark-color;
-    color: $text-light;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
+  position: relative;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: $dark-color;
+  color: $text-light;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
 
-     @include respond(tablet) {
-        padding: .9rem 2rem;
-     }
+  @include respond(tablet) {
+    padding: 0.9rem 2rem;
+  }
 
-    &:before {
-        content:'';
-        display: block;
-        position: absolute;
-        bottom:-3px;
-        right:-3px;
-        height: 100%;
-        width: 100%;
-        border: 1px solid $dark-color;
-    } 
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid $dark-color;
+  }
 
-    &:hover {
-        color: $primary-color;
-    }
+  &:hover {
+    color: $primary-color;
+  }
 }
-
 
 //RESPONSIVE BREKPOINT
 // 0 - 600px:     phone
@@ -76,4 +74,3 @@ $secondary-color:#FBFBFD;
     }
   }
 }
-

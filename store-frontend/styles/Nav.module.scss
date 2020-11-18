@@ -1,31 +1,28 @@
 @import '../styles/variables.scss';
 .nav {
-  
-    ul {
-        display: flex;
-        list-style: none;
-        justify-content: center;
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+  }
+  li {
+    margin: 0 0.2rem;
+    @include respond(tablet) {
+      margin: 1rem;
     }
-    li {
-        margin: 0 .2rem;
-        @include respond(tablet) {
-            margin:1rem;
-        }
+  }
+  a {
+    padding: 0.2rem;
+    text-decoration: none;
+    color: $text-dark;
+    transition: 0.2s ease-in-out opacity;
 
+    @include respond(tablet) {
+      font-size: 1.1rem;
     }
-    a {
-        padding: .2rem;
-        text-decoration: none;
-        color: $text-dark;
-        transition: .2s ease-in-out opacity;
+  }
 
-        @include respond(tablet) {
-            font-size: 1.1rem;
-        }
-    }
-
-    a:hover {
-        opacity:.3;
-    }
-
+  a:hover {
+    opacity: 0.3;
+  }
 }
