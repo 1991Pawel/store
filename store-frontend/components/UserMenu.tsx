@@ -3,11 +3,10 @@ import styles from '../styles/UserMenu.module.scss';
 import SvgCartIcon from './SvgCartIcon';
 import SvgUserIcon from './SvgUserIcon';
 import SvgHeartIcon from './SvgHeartIcon';
-import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { useCartContext } from '../context/CartContext';
 
 const UserMenu: React.FC = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useCartContext();
 
   return (
     <div className={styles.menu}>
@@ -19,11 +18,15 @@ const UserMenu: React.FC = () => {
       <button className={styles.menu__option}>
         <SvgCartIcon />
         <span className={styles.menu__desc}>$0.00</span>
-        <span className={styles.menu__count}>{cartItems.length}</span>
+        {Boolean(cartItems.length) && (
+          <span className={styles.menu__count}>
+            {cartItems.length}
+          </span>
+        )}
       </button>
       <button className={styles.menu__option}>
         <SvgHeartIcon />
-        <span className={styles.menu__count}>5</span>
+        <span className={styles.menu__count}>3</span>
       </button>
     </div>
   );

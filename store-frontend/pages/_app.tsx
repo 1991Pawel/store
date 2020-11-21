@@ -29,8 +29,8 @@ App.getInitialProps = async ({ Component, ctx }) => {
       // const data = response.json();
 
       const storeData = [
-        { id: 1, name: 'Bluza' },
-        { id: 2, name: 'Koszula ' },
+        // { id: 1, name: 'Bluza' },
+        // { id: 2, name: 'Koszula ' },
       ];
 
       appData.storeData = storeData;
