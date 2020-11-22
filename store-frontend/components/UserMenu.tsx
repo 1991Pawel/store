@@ -16,7 +16,7 @@ const UserMenu: React.FC = () => {
       </button>
       <button className={styles.menu__option}>
         <SvgCartIcon />
-        <span className={styles.menu__desc}>{totalPrice()} zł</span>
+        <span className={styles.menu__desc}>{totalPrice()} $</span>
         {Boolean(cartItems.length) && (
           <span className={styles.menu__count}>
             {cartItems.length}
