@@ -1,14 +1,14 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import { Product } from '../types/type';
 
-export const CartContext = createContext({});
+export const CartContext = createContext(null);
 const CartProvider = ({ children, data }) => {
   const [cartItems, setCartItems] = useState(data);
 
   const addItemToCart = (product: Product) =>
     setCartItems([...cartItems, product]);
   const removeItemFromCart = (id: number) =>
-    setCartItems(cartItems.filter((item) => item.id !== id));
+    setCartItems(cartItems.filter((item: Product) => item.id !== id));
 
   return (
     <CartContext.Provider
@@ -20,3 +20,7 @@ const CartProvider = ({ children, data }) => {
 };
 
 export default CartProvider;
+
+export function useCartContext() {
+  return useContext(CartContext);
+}
