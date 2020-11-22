@@ -6,18 +6,17 @@ import SvgHeartIcon from './SvgHeartIcon';
 import { useCartContext } from '../context/CartContext';
 
 const UserMenu: React.FC = () => {
-  const { cartItems } = useCartContext();
+  const { cartItems, totalPrice } = useCartContext();
 
   return (
     <div className={styles.menu}>
-      {console.log(cartItems)}
       <button className={styles.menu__option}>
         <SvgUserIcon />
         <span className={styles.menu__desc}>Log in</span>
       </button>
       <button className={styles.menu__option}>
         <SvgCartIcon />
-        <span className={styles.menu__desc}>$0.00</span>
+        <span className={styles.menu__desc}>{totalPrice()} $</span>
         {Boolean(cartItems.length) && (
           <span className={styles.menu__count}>
             {cartItems.length}

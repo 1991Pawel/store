@@ -1,10 +1,9 @@
 export interface Products {
-    products: Product[];
+  products: Product[];
 }
 export interface Product {
-    id: number,
-    title: string,
-    descritpion: string,
-    price: number,
+  id: number;
+  title: string;
+  descritpion: string;
+  price: number;
 }
-
