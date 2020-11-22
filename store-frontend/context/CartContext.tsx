@@ -27,9 +27,17 @@ const CartProvider: React.FC = ({ children }) => {
     setValue(cartItems.filter((item: Product) => item.id !== id));
   };
 
+  const totalPrice = () =>
+    cartItems.reduce((prev, curr) => prev + curr.price, 0).toFixed(2);
+
   return (
     <CartContext.Provider
-      value={{ cartItems, addItemToCart, removeItemFromCart }}
+      value={{
+        cartItems,
+        addItemToCart,
+        removeItemFromCart,
+        totalPrice,
+      }}
     >
       {children}
     </CartContext.Provider>
