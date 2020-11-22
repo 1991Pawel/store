@@ -4,7 +4,7 @@ import IntroBanner from '../components/IntroBanner';
 import Slider from '../components/Slider';
 import { Products } from '../types/type';
 
-const Home = ({ products }: Products) => {
+const Home: React.FC<Products> = ({ products }) => {
   return (
     <Layout>
       <IntroBanner />

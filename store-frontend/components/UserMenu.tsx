@@ -10,7 +10,6 @@ const UserMenu: React.FC = () => {
 
   return (
     <div className={styles.menu}>
-      {console.log(cartItems)}
       <button className={styles.menu__option}>
         <SvgUserIcon />
         <span className={styles.menu__desc}>Log in</span>
