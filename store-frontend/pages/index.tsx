@@ -3,13 +3,11 @@ import NewCollection from '../components/NewCollection';
 import IntroBanner from '../components/IntroBanner';
 import Slider from '../components/Slider';
 import { Products } from '../types/type';
-import Cart from '../components/Cart';
 
 const Home: React.FC<Products> = ({ products }) => {
   return (
     <Layout>
       <IntroBanner />
-      <Cart />
       <main>
         <Slider products={products} />
         <NewCollection />

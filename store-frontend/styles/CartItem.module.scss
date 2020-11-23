@@ -1,8 +1,17 @@
 .cartItem {
   border: 1px solid red;
-  width: 200px;
-  img {
-    height: auto;
+  display: flex;
+
+  &__content {
+    padding: 0.5rem;
+    border: 1px solid blue;
+  }
+
+  &__title {
+    color: rgb(39, 37, 37);
+  }
+  &__img {
+    height: 100px;
     width: 100px;
   }
 }
