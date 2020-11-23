@@ -29,7 +29,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({
         <div className={styles.product__content}>
           <p className={styles.product__title}>{product.title}</p>
           <p className={styles.product__price}>
-            cena: {product.price}
+            price: ${product.price}
           </p>
         </div>
         <button

@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { useCartContext } from '../context/CartContext';
 import { useSlideNumber } from '../hooks/useSlideNumber';
 import Carousel from 'nuka-carousel';
 import styles from '../styles/Slider.module.scss';
@@ -8,9 +7,7 @@ import { Products } from '../types/type';
 
 const Slider: React.FC<Products> = ({ products }) => {
   const slideNumberToShow = useSlideNumber();
-  const { addItemToCart, removeItemFromCart, cartItems } = useContext(
-    CartContext,
-  );
+  const { addItemToCart, removeItemFromCart } = useCartContext();
 
   return (
     <div className="wrapper">

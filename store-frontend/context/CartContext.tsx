@@ -7,11 +7,20 @@ import React, {
 import { Product } from '../types/type';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
-export const CartContext = createContext(null);
+type CartConxtextProps = {
+  cartItems: Product[];
+  addItemToCart: (product: Product) => void;
+  removeItemFromCart: (id: number) => void;
+  totalPrice: () => string;
+};
+
+export const CartContext = createContext<
+  CartConxtextProps | undefined
+>(undefined);
 
 const CartProvider: React.FC = ({ children }) => {
   const [storedValue, setValue] = useLocalStorage('products', []);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<Product[]>([]);
 
   useEffect(() => {
     setCartItems(storedValue);
@@ -20,6 +29,7 @@ const CartProvider: React.FC = ({ children }) => {
   const addItemToCart = (product: Product) => {
     setCartItems([...cartItems, product]);
     setValue([...cartItems, product]);
+    console.log('render');
   };
 
   const removeItemFromCart = (id: number) => {
@@ -44,8 +54,14 @@ const CartProvider: React.FC = ({ children }) => {
   );
 };
 
-export default CartProvider;
+export const useCartContext = (): CartConxtextProps => {
+  const ctx = useContext(CartContext);
+  if (ctx === undefined) {
+    throw new Error(
+      'useCartContext must be used within a CartProvider',
+    );
+  }
+  return ctx;
+};
 
-export function useCartContext() {
-  return useContext(CartContext);
-}
+export default CartProvider;
