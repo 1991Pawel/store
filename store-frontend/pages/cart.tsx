@@ -14,17 +14,27 @@ const Cart: React.FC = () => {
     <Layout>
       <div className="wrapper">
         <div className={styles.cart}>
-          <ul className={styles.cart}>
-            {cartItems.map((item) => (
-              <CartItem
-                key={item.id}
-                addItemToCart={addItemToCart}
-                removeItemFromCart={removeItemFromCart}
-                product={item}
-              />
-            ))}
-          </ul>
-          <span>Total Price: $ {totalPrice()}</span>
+          {cartItems.length ? (
+            <>
+              <ul className={styles.cart}>
+                {cartItems.map((item) => (
+                  <CartItem
+                    key={item.id}
+                    addItemToCart={addItemToCart}
+                    removeItemFromCart={removeItemFromCart}
+                    product={item}
+                  />
+                ))}
+              </ul>
+              <span className={styles.cart__total}>
+                Total Price: $ {totalPrice()}
+              </span>
+            </>
+          ) : (
+            <p className={styles.cart__info}>
+              twój koszyk jest pusty
+            </p>
+          )}
         </div>
       </div>
     </Layout>

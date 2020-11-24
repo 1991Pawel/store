@@ -1,3 +1,10 @@
 .cart {
-  background: #ccc;
+  background: #f5f5f7;
+
+  &__total {
+    display: block;
+    padding: 1rem;
+    background: rgb(22, 22, 22);
+    color: #fff;
+  }
 }

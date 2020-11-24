@@ -22,9 +22,6 @@ const CartItem: React.FC<CartItemProps> = ({
       <div className={styles.cartItem__content}>
         <h5 className={styles.cartItem__title}>{product.title}</h5>
         <p className={styles.cartItem__desc}>{product.description}</p>
-        <span className={styles.cartItem__price}>
-          price: ${price}
-        </span>
         <div className={styles.quantity}>
           <button
             onClick={() => removeItemFromCart(product.id)}
@@ -42,6 +39,7 @@ const CartItem: React.FC<CartItemProps> = ({
             +
           </button>
         </div>
+        <span className={styles.cartItem__price}>$ {price}</span>
       </div>
     </li>
   );

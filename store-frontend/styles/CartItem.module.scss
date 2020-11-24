@@ -1,17 +1,23 @@
 .cartItem {
-  border: 1px solid red;
   display: flex;
+  height: 150px;
+  border-top: 1px solid #ccc;
 
   &__content {
     padding: 0.5rem;
-    border: 1px solid blue;
+  }
+  &__desc {
+    font-size: 0.9rem;
+    max-width: 300px;
   }
 
   &__title {
+    font-size: 1rem;
     color: rgb(39, 37, 37);
   }
   &__img {
-    height: 100px;
+    display: block;
+    object-fit: cover;
     width: 100px;
   }
 }
@@ -28,11 +34,3 @@
     margin: 0.2rem;
   }
 }
-
-// <div className={styles.quantity}>
-// <button className={styles.quantity__btn}>-</button>
-// <span className={styles.quantity__count}>
-//   {product.quantity}
-// </span>
-// <button className={styles.quantity__btn}>+</button>
-// </div>
