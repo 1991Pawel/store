@@ -4,15 +4,24 @@ import CartItem from '../components/CartItem';
 import Layout from '../components/Layout';
 
 const Cart: React.FC = () => {
-  const { cartItems, totalPrice } = useCartContext();
+  const {
+    cartItems,
+    totalPrice,
+    addItemToCart,
+    removeItemFromCart,
+  } = useCartContext();
   return (
     <Layout>
       <div className="wrapper">
         <div className={styles.cart}>
-          <p>lorem</p>
           <ul className={styles.cart}>
             {cartItems.map((item) => (
-              <CartItem key={item.id} product={item} />
+              <CartItem
+                key={item.id}
+                addItemToCart={addItemToCart}
+                removeItemFromCart={removeItemFromCart}
+                product={item}
+              />
             ))}
           </ul>
           <span>Total Price: $ {totalPrice()}</span>

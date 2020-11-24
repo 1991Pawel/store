@@ -15,3 +15,24 @@
     width: 100px;
   }
 }
+
+.quantity {
+  margin: 1rem 0;
+  &__btn {
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #000;
+    background-color: #fff;
+  }
+  &__count {
+    margin: 0.2rem;
+  }
+}
+
+// <div className={styles.quantity}>
+// <button className={styles.quantity__btn}>-</button>
+// <span className={styles.quantity__count}>
+//   {product.quantity}
+// </span>
+// <button className={styles.quantity__btn}>+</button>
+// </div>
