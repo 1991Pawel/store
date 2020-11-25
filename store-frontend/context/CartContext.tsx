@@ -25,7 +25,7 @@ const CartProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     setCartItems(storedValue);
-  }, []);
+  }, [storedValue]);
 
   const addItemToCart = (product: Product) => {
     const inCart = cartItems.find((item) => item.id === product.id);
@@ -35,34 +35,37 @@ const CartProvider: React.FC = ({ children }) => {
         ...product,
         quantity: 1,
       };
-      setCartItems([...itemsInCart, newProduct]);
       setValue([...itemsInCart, newProduct]);
     } else {
-      itemsInCart.map((item) => {
-        if (item.id === product.id && item.quantity) {
-          item.quantity++;
+      const newItems = cartItems.map((item) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
         }
+        return item;
       });
-      setCartItems(itemsInCart);
-      setValue(itemsInCart);
+      setValue(newItems);
     }
   };
 
   const decrementItemFromCart = (id: number) => {
-    const itemsInCart = cartItems.filter((item) => {
+    const itemsInCart = cartItems.map((item) => {
       if (item.id === id) {
         if (item.quantity) {
-          item.quantity--;
+          return {
+            ...item,
+            quantity: item.quantity - 1,
+          };
         }
       }
       return item;
     });
-    setCartItems(itemsInCart.filter((item) => item.quantity >= 1));
     setValue(itemsInCart.filter((item) => item.quantity >= 1));
   };
 
   const removeItemFromCart = (id: number) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
     setValue(cartItems.filter((item) => item.id !== id));
   };
 
