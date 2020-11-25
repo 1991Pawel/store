@@ -38,21 +38,28 @@ const CartProvider: React.FC = ({ children }) => {
       setCartItems([...itemsInCart, newProduct]);
       setValue([...itemsInCart, newProduct]);
     } else {
-      itemsInCart.map((item) => {
-        if (item.id === product.id && item.quantity) {
-          item.quantity++;
+      const newItems = cartItems.map((item) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
         }
+        return item;
       });
-      setCartItems(itemsInCart);
+      setCartItems(newItems);
       setValue(itemsInCart);
     }
   };
 
   const decrementItemFromCart = (id: number) => {
-    const itemsInCart = cartItems.filter((item) => {
+    const itemsInCart = cartItems.map((item) => {
       if (item.id === id) {
         if (item.quantity) {
-          item.quantity--;
+          return {
+            ...item,
+            quantity: item.quantity - 1,
+          };
         }
       }
       return item;
@@ -62,7 +69,7 @@ const CartProvider: React.FC = ({ children }) => {
   };
 
   const removeItemFromCart = (id: number) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
     setValue(cartItems.filter((item) => item.id !== id));
   };
 
