@@ -1,14 +1,27 @@
 .cartItem {
-  display: flex;
-  height: 150px;
-  border-top: 1px solid #ccc;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+  position: relative;
 
-  &__content {
-    padding: 0.5rem;
+  &__controlls {
   }
-  &__desc {
-    font-size: 0.9rem;
-    max-width: 300px;
+  &__removeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background: rgb(190, 120, 120);
+    border: none;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__title {
@@ -16,14 +29,19 @@
     color: rgb(39, 37, 37);
   }
   &__img {
-    display: block;
-    object-fit: cover;
-    width: 100px;
+    max-width: 100px;
+  }
+  &__price {
+    font-weight: bold;
+    margin-left: auto;
+  }
+
+  &__row {
+    display: flex;
   }
 }
 
 .quantity {
-  margin: 1rem 0;
   &__btn {
     cursor: pointer;
     padding: 0.2rem 0.5rem;
@@ -31,6 +49,6 @@
     background-color: #fff;
   }
   &__count {
-    margin: 0.2rem;
+    margin: 0.5rem;
   }
 }

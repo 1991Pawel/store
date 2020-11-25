@@ -9,6 +9,7 @@ const Cart: React.FC = () => {
     totalPrice,
     addItemToCart,
     removeItemFromCart,
+    decrementItemFromCart,
   } = useCartContext();
   return (
     <Layout>
@@ -16,12 +17,13 @@ const Cart: React.FC = () => {
         <div className={styles.cart}>
           {cartItems.length ? (
             <>
-              <ul className={styles.cart}>
+              <ul className={styles.cart__inner}>
                 {cartItems.map((item) => (
                   <CartItem
                     key={item.id}
                     addItemToCart={addItemToCart}
                     removeItemFromCart={removeItemFromCart}
+                    decrementItemFromCart={decrementItemFromCart}
                     product={item}
                   />
                 ))}
