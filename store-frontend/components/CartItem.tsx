@@ -3,9 +3,9 @@ import { Product } from '../types/type';
 
 type CartItemProps = {
   product: Product;
-  addItemToCart: any;
-  removeItemFromCart: any;
-  decrementItemFromCart: any;
+  addItemToCart: (product: Product) => void;
+  removeItemFromCart: (id: number) => void;
+  decrementItemFromCart: (id: number) => void;
 };
 
 const CartItem: React.FC<CartItemProps> = ({
