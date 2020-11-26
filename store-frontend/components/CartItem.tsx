@@ -29,27 +29,25 @@ const CartItem: React.FC<CartItemProps> = ({
           x
         </button>
         <h5 className={styles.cartItem__title}>{product.title}</h5>
-        <div className={styles.cartItem__controlls}>
-          <div className={styles.cartItem__row}>
-            <div className={styles.quantity}>
-              <button
-                onClick={() => decrementItemFromCart(product.id)}
-                className={styles.quantity__btn}
-              >
-                -
-              </button>
-              <span className={styles.quantity__count}>
-                {product.quantity}
-              </span>
-              <button
-                onClick={() => addItemToCart(product)}
-                className={styles.quantity__btn}
-              >
-                +
-              </button>
-            </div>
-            <span className={styles.cartItem__price}>$ {price}</span>
+        <div className={styles.cartItem__row}>
+          <div className={styles.quantity}>
+            <button
+              onClick={() => decrementItemFromCart(product.id)}
+              className={styles.quantity__btn}
+            >
+              -
+            </button>
+            <span className={styles.quantity__count}>
+              {product.quantity}
+            </span>
+            <button
+              onClick={() => addItemToCart(product)}
+              className={styles.quantity__btn}
+            >
+              +
+            </button>
           </div>
+          <span className={styles.cartItem__price}>$ {price}</span>
         </div>
       </div>
     </li>

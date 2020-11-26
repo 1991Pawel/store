@@ -9,10 +9,11 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 
 type CartConxtextProps = {
   cartItems: Product[];
+  totalPrice: () => string;
+  totalProducts: () => number;
   addItemToCart: (product: Product) => void;
   decrementItemFromCart: (id: number) => void;
   removeItemFromCart: (id: number) => void;
-  totalPrice: () => string;
 };
 
 export const CartContext = createContext<
@@ -69,6 +70,9 @@ const CartProvider: React.FC = ({ children }) => {
     setValue(cartItems.filter((item) => item.id !== id));
   };
 
+  const totalProducts = () =>
+    cartItems.reduce((prev, curr) => prev + curr.quantity, 0);
+
   const totalPrice = () =>
     cartItems
       .reduce((prev, curr) => prev + curr.price * curr.quantity, 0)
@@ -79,6 +83,7 @@ const CartProvider: React.FC = ({ children }) => {
       value={{
         cartItems,
         totalPrice,
+        totalProducts,
         addItemToCart,
         removeItemFromCart,
         decrementItemFromCart,
