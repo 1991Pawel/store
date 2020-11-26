@@ -1,10 +1,12 @@
-.cart {
-  background: #f5f5f7;
+@import '../styles/variables.scss';
 
-  &__total {
-    display: block;
-    padding: 1rem;
-    background: rgb(22, 22, 22);
-    color: #fff;
+.cart {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  grid-gap: 2rem;
+
+  @include respond(desktop) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }

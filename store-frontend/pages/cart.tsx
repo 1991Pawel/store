@@ -1,12 +1,12 @@
 import { useCartContext } from '../context/CartContext';
+import Layout from '../components/Layout';
 import styles from '../styles/Cart.module.scss';
 import CartItem from '../components/CartItem';
-import Layout from '../components/Layout';
+import TotalOrder from '../components/TotalOrder';
 
 const Cart: React.FC = () => {
   const {
     cartItems,
-    totalPrice,
     addItemToCart,
     removeItemFromCart,
     decrementItemFromCart,
@@ -28,9 +28,7 @@ const Cart: React.FC = () => {
                   />
                 ))}
               </ul>
-              <span className={styles.cart__total}>
-                Total Price: $ {totalPrice()}
-              </span>
+              <TotalOrder />
             </>
           ) : (
             <p className={styles.cart__info}>
