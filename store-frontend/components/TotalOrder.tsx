@@ -2,7 +2,7 @@ import { useCartContext } from '../context/CartContext';
 import styles from '../styles/TotalOrder.module.scss';
 
 const TotalOrder: React.FC = () => {
-  const { cartItems, totalPrice, totalProducts } = useCartContext();
+  const { totalPrice, totalProducts } = useCartContext();
   return (
     <section className={styles.total}>
       <h2>Cart Totals</h2>
