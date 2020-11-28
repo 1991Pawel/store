@@ -6,9 +6,9 @@
 }
 
 @font-face {
-  font-family: 'Goldman', cursive;
-  src: url('../public/fonts/Goldman/Goldman-Regular.ttf'),
-    url('../public/fonts/Goldman/Goldman-Bold.ttf');
+  font-family: 'Montserrat', sans-serif;
+  src: url('../public/fonts/Montserrat//Montserrat-Medium.ttf'),
+    url('../public/fonts/Montserrat/Montserrat-Bold.ttf');
 }
 
 * {
@@ -50,7 +50,8 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Goldman', cursive;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
 .wrapper {
