@@ -2,6 +2,7 @@ import styles from '../styles/SingleProduct.module.scss';
 import SvgCartIcon from './SvgCartIcon';
 import SvgHeartIcon from './SvgHeartIcon';
 import { Product } from '../types/type';
+import { useFavoriteContext } from '../context/FavoriteContext';
 
 type SingleProductProps = {
   product: Product;
@@ -12,13 +13,17 @@ type SingleProductProps = {
 const SingleProduct: React.FC<SingleProductProps> = ({
   product,
   addItemToCart,
-  removeItemFromCart,
 }) => {
+  const {
+    favoriteProducts,
+    addItemToFavorite,
+  } = useFavoriteContext();
+
   return (
     <div className={styles.product}>
       <div className={styles.product__item}>
         <button
-          onClick={() => removeItemFromCart(product.id)}
+          onClick={() => addItemToFavorite(product)}
           className={styles.product__heart}
         >
           <SvgHeartIcon />
